@@ -19,7 +19,7 @@ const Lumen = (c: Config) => {
     payload: any,
     method: RequestMethod = "POST"
   ) => {
-    const url = `${BASE_URL}/${path}`;
+    const url = `${BASE_URL}${path}`;
     const response = await fetch(url, {
       method,
       body: payload,
@@ -27,23 +27,35 @@ const Lumen = (c: Config) => {
         Authorization: `Bearer ${_config.publicKey}`,
       },
     });
+    const json = await response.json();
+
     if (!response.ok) {
+      console.log("error", json);
       throw Error("API connection error");
     }
-    return await response.json();
+
+    console.log({ json });
+    return json;
   };
 
-  const identify = (identifier: string, payload: IdentifyPayload) => {
+  const identify = (identifier: string, data: IdentifyPayload) => {
     if (!identifier) {
       throw Error("key [identifier] is required");
     }
+
+    validate(identifySchema, data);
+
     _identifier = identifier;
 
-    validate(identifySchema, payload);
-    return _request("/", payload);
+    const payload = {
+      identifier,
+      ...data,
+    };
+
+    return _request("/customer/identify", payload);
   };
 
-  const track = async (eventName: string, input?: Track) => {
+  const track = async (eventName: string, input: Track = {}) => {
     if (!eventName) {
       throw Error("key [eventName] is required");
     }

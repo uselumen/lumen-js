@@ -1,1 +1,1 @@
-export const BASE_URL = "https://google.com";
+export const BASE_URL = "https://api-lumen-app.herokuapp.com/v1";

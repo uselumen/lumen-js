@@ -7,11 +7,16 @@ export const configSchema: InputSchema = {
 };
 
 export const identifySchema: InputSchema = {
-  identifier: {
-    type: "string",
-  },
   email: {
     type: "string",
+  },
+  first_name: {
+    type: "string",
+    optional: true,
+  },
+  last_name: {
+    type: "string",
+    optional: true,
   },
   attributes: {
     type: "object",
