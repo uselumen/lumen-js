@@ -1,18 +1,18 @@
 import Lumen from "../index";
 
-Lumen.init({
-  publicKey: "Hello world",
+const lumenClient = Lumen({
+  publicKey: "<-public-key->",
 });
 
-Lumen.identify("oskjhssoik", {
+lumenClient.identify("oskjhssoik", {
   email: "test@gmail.com",
   attributes: {
     value: 2345,
   },
 });
 
-Lumen.track("omoo");
+lumenClient.track("omoo");
 
-Lumen.track("omoo", {
+lumenClient.track("omoo", {
   properties: {},
 });
