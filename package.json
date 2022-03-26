@@ -1,0 +1,21 @@
+{
+  "name": "uselumen",
+  "version": "0.1.0",
+  "description": "Personalized and targeted customer marketing",
+  "main": "index.js",
+  "repository": "https://github.com/uselumen/lumen-js",
+  "author": "uselumen",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "example": "ts-node examples/index.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "cross-fetch": "^3.1.5"
+  }
+}
