@@ -11,7 +11,7 @@ export interface IdentifyPayload {
 
 export interface Track {
   platform?: "ios" | "web" | "web";
-  deviceId?: string;
+  device_id?: string;
   properties?: object;
 }
 

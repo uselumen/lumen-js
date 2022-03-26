@@ -1,20 +1,31 @@
 import Lumen from "../index";
 
 const lumenClient = Lumen({
-  publicKey: "<-public-key->",
+  publicKey: "lBEx3NzJ8x34LJcQYrOBaY5tr0QYzgjuQA",
 });
 
-lumenClient.identify("oskjhssoik", {
-  email: "test@gmail.com",
-  first_name: "john",
-  last_name: "dev",
-  attributes: {
-    value: 2345,
-  },
-});
+const run = async () => {
+  const idResponse = await lumenClient.identify("oskjhssoik11", {
+    email: "test@gmail.com",
+    first_name: "john",
+    last_name: "dev",
+    attributes: {
+      value: 2345,
+    },
+  });
 
-lumenClient.track("omoo");
+  console.log({ idResponse });
 
-lumenClient.track("omoo", {
-  properties: {},
-});
+  const trackResponse = await lumenClient.track("signed_out", {
+    device_id: "12345",
+    platform: "web",
+    properties: {
+      userType: "Member",
+      duration: 400,
+    },
+  });
+
+  console.log({ trackResponse });
+};
+
+run();
