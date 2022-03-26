@@ -1,5 +1,6 @@
 import fetch from "cross-fetch";
 import { BASE_URL } from "./lib/constants";
+import { getIpAddress } from "./lib/ip";
 import {
   configSchema,
   identifySchema,
@@ -60,10 +61,13 @@ const Lumen = (c: Config) => {
       throw Error("key [event_name] is required");
     }
 
+    const ip_address = await getIpAddress();
+
     validate(trackPropertySchema, input);
     const trackPayload = {
       ...input,
       event_name,
+      ip_address,
       identifier: _identifier,
       source: "js-sdk",
     };
