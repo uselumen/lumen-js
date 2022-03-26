@@ -22,20 +22,20 @@ const Lumen = (c: Config) => {
     const url = `${BASE_URL}${path}`;
     const response = await fetch(url, {
       method,
-      body: payload,
+      body: JSON.stringify(payload),
       headers: {
-        Authorization: `Bearer ${_config.publicKey}`,
+        "Content-Type": "application/json",
+        api_key: `${_config.publicKey}`,
       },
     });
     const json = await response.json();
 
     if (!response.ok) {
-      console.log("error", json);
-      throw Error("API connection error");
+      const error = json?.message || "API connection error";
+      throw Error(error);
     }
 
-    console.log({ json });
-    return json;
+    return json?.data || {};
   };
 
   const identify = (identifier: string, data: IdentifyPayload) => {
@@ -47,22 +47,28 @@ const Lumen = (c: Config) => {
 
     _identifier = identifier;
 
-    const payload = {
+    const identifyPayload = {
       identifier,
       ...data,
     };
 
-    return _request("/customer/identify", payload);
+    return _request("/customer/identify", identifyPayload);
   };
 
-  const track = async (eventName: string, input: Track = {}) => {
-    if (!eventName) {
-      throw Error("key [eventName] is required");
+  const track = async (event_name: string, input: Track = {}) => {
+    if (!event_name) {
+      throw Error("key [event_name] is required");
     }
 
     validate(trackPropertySchema, input);
-    const payload = { ...input, identifier: _identifier, source: "js-sdk" };
-    return _request("/", payload);
+    const trackPayload = {
+      ...input,
+      event_name,
+      identifier: _identifier,
+      source: "js-sdk",
+    };
+
+    return _request("/event/track", trackPayload);
   };
 
   return { identify, track };

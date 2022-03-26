@@ -28,7 +28,7 @@ export const trackPropertySchema: InputSchema = {
     type: "string",
     optional: true,
   },
-  deviceId: {
+  device_id: {
     type: "string",
     optional: true,
   },
