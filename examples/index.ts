@@ -16,12 +16,12 @@ const run = async () => {
 
   console.log({ idResponse });
 
-  const trackResponse = await lumenClient.track("signed_out", {
+  const trackResponse = await lumenClient.track("user_signed_in", {
     device_id: "12345",
     platform: "web",
     properties: {
-      userType: "Member",
-      duration: 400,
+      hasDoneKyc: "true",
+      isAdmin: "true",
     },
   });
 
