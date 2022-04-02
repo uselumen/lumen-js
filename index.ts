@@ -32,6 +32,7 @@ const Lumen = (c: Config) => {
     const json = await response.json();
 
     if (!response.ok) {
+      console.log({ json });
       const error = json?.message || "API connection error";
       throw Error(error);
     }

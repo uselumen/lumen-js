@@ -1,7 +1,7 @@
 import Lumen from "../index";
 
 const lumenClient = Lumen({
-  publicKey: "hAHHNKg83SAZXuSOc0xjutHhWsxF3rl0YU",
+  publicKey: "yZmS6Bkk7cfhBuinWwKTfYxmOhaBaFVy4fp",
 });
 
 const run = async () => {
