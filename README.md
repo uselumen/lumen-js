@@ -4,13 +4,15 @@ The Lumen JavaScript SDK allows you to seamlessly identify and track user attrib
 
 ## Installation
 
-Install the SDK via yarn or npm
+Install the SDK via npm
 
 ```sh
 $ npm install lumen-js
+```
 
-// or yarn
+or yarn
 
+```
 $ yarn add lumen-js
 ```
 
