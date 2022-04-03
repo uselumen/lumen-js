@@ -1,6 +1,6 @@
 {
   "name": "uselumen",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Personalized and targeted customer marketing",
   "main": "dist/bundle.min.js",
   "types": "dist/index.d.ts",
