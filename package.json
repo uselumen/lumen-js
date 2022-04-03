@@ -1,6 +1,6 @@
 {
   "name": "lumen-js",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Personalized and targeted customer marketing",
   "main": "dist/index.min.js",
   "types": "dist/index.d.ts",
