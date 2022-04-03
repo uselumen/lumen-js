@@ -1,0 +1,6 @@
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "rules": {
+    "variable-name": [true, "allow-snake-case", "allow-pascal-case", "allow-leading-underscore"]
+  }
+}

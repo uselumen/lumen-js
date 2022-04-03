@@ -1,4 +1,4 @@
-import Lumen from "../index";
+import Lumen from "../src/index";
 
 const lumenClient = Lumen({
   publicKey: "---your_public_here",

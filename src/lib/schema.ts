@@ -1,39 +1,39 @@
-import { InputSchema } from "./validate";
+import { InputSchema } from './validate';
 
 export const configSchema: InputSchema = {
   publicKey: {
-    type: "string",
+    type: 'string',
   },
 };
 
 export const identifySchema: InputSchema = {
   email: {
-    type: "string",
+    type: 'string',
   },
   first_name: {
-    type: "string",
+    type: 'string',
     optional: true,
   },
   last_name: {
-    type: "string",
+    type: 'string',
     optional: true,
   },
   attributes: {
-    type: "object",
+    type: 'object',
   },
 };
 
 export const trackPropertySchema: InputSchema = {
   platform: {
-    type: "string",
+    type: 'string',
     optional: true,
   },
   device_id: {
-    type: "string",
+    type: 'string',
     optional: true,
   },
   properties: {
-    type: "object",
+    type: 'object',
     optional: true,
   },
 };

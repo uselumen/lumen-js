@@ -10,9 +10,9 @@ export interface IdentifyPayload {
 }
 
 export interface Track {
-  platform?: "ios" | "web" | "android";
+  platform?: 'ios' | 'web' | 'android';
   device_id?: string;
   properties?: object;
 }
 
-export type RequestMethod = "POST" | "GET" | "DELETE";
+export type RequestMethod = 'POST' | 'GET' | 'DELETE';

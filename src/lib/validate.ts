@@ -1,5 +1,5 @@
 interface Item {
-  type: "string" | "number" | "object" | "boolean";
+  type: 'string' | 'number' | 'object' | 'boolean';
   optional?: boolean;
 }
 
@@ -23,7 +23,7 @@ const validate = (schema: InputSchema, data: Data) => {
     const optionType = typeof option;
 
     if (optionType !== prop.type) {
-      `Invalid type ${optionType} for option ${key}. Expected ${prop.type}`;
+      throw Error(`Invalid type ${optionType} for option ${key}. Expected ${prop.type}`);
     }
 
     return;
