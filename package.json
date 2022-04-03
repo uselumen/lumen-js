@@ -1,5 +1,5 @@
 {
-  "name": "uselumen",
+  "name": "lumen-js",
   "version": "1.0.0",
   "description": "Personalized and targeted customer marketing",
   "main": "dist/bundle.min.js",
@@ -9,7 +9,8 @@
   "license": "MIT",
   "keywords": [
     "lumen",
-    "uselumen"
+    "uselumen",
+    "lumen-js"
   ],
   "scripts": {
     "build": "webpack --mode production",
