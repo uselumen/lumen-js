@@ -7,7 +7,9 @@
     "target": "es5",
     "outDir": "dist",
     "module": "CommonJS",
-    "lib": ["es5", "es2015.promise"]
-  }
+    "lib": ["es5", "es2015.promise"],
+    "declaration": true
+  },
+  "exclude": ["examples", "dist"]
   //   "include": ["src/**/*"]
 }
