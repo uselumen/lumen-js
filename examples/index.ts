@@ -1,27 +1,26 @@
-import Lumen from "../src/index";
+import Lumen from '../src/index';
 
 const lumenClient = Lumen({
-  publicKey: "---your_public_here",
+  publicKey: '<<- your-api-key ->>',
 });
 
 const run = async () => {
-  const idResponse = await lumenClient.identify("oskjhssoik11", {
-    email: "test@gmail.com",
-    first_name: "john",
-    last_name: "dev",
+  const idResponse = await lumenClient.identify('<<- unique-identifier ->>', {
+    email: 'johndoe@gmail.com',
+    first_name: 'john',
+    last_name: 'doe',
     attributes: {
-      value: 2345,
+      hasCompletedKyc: true,
     },
   });
 
   console.log({ idResponse });
 
-  const trackResponse = await lumenClient.track("user_signed_in", {
-    device_id: "12345",
-    platform: "web",
+  const trackResponse = await lumenClient.track('Product Clicked', {
+    device_id: '098909',
+    platform: 'android',
     properties: {
-      hasDoneKyc: "true",
-      isAdmin: "true",
+      sku: '102930',
     },
   });
 

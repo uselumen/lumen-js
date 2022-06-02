@@ -57,11 +57,17 @@ const Lumen = (c: Config) => {
     const ip_address = await getIpAddress();
 
     validate(trackPropertySchema, input);
+    const identifier = input.identifier || _identifier;
+
+    if (!identifier) {
+      throw Error('identifier is required');
+    }
+
     const trackPayload = {
       ...input,
       event_name,
       ip_address,
-      identifier: _identifier,
+      identifier: identifier,
       source: 'js-sdk',
     };
 
