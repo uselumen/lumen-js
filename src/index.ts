@@ -67,7 +67,7 @@ const Lumen = (c: Config) => {
       ...input,
       event_name,
       ip_address,
-      identifier: identifier,
+      identifier,
       source: 'js-sdk',
     };
 
