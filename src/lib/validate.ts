@@ -22,6 +22,10 @@ const validate = (schema: InputSchema, data: Data) => {
 
     const optionType = typeof option;
 
+    if (optionType === 'undefined' && prop.optional) {
+      return;
+    }
+
     if (optionType !== prop.type) {
       throw Error(`Invalid type ${optionType} for option ${key}. Expected ${prop.type}`);
     }

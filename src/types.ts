@@ -8,12 +8,11 @@ export interface IdentifyPayload {
   email: string;
   phone_number?: string;
   attributes?: object;
+  device_id?: string;
 }
 
 export interface Track {
-  identifier?: string;
   platform?: 'ios' | 'web' | 'android';
-  device_id?: string;
   properties?: object;
 }
 

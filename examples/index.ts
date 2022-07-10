@@ -5,7 +5,7 @@ const lumenClient = Lumen({
 });
 
 const run = async () => {
-  const idResponse = await lumenClient.identify('<<- unique-identifier ->>', {
+  await lumenClient.identify('user_identifier', {
     email: 'johndoe@gmail.com',
     first_name: 'john',
     last_name: 'doe',
@@ -14,17 +14,12 @@ const run = async () => {
     },
   });
 
-  console.log({ idResponse });
-
-  const trackResponse = await lumenClient.track('Product Clicked', {
-    device_id: '098909',
-    platform: 'android',
+  await lumenClient.track('user_identifier', "Clicked 'Add Product To Cart'", {
+    platform: 'web',
     properties: {
       sku: '102930',
     },
   });
-
-  console.log({ trackResponse });
 };
 
 run();

@@ -49,7 +49,7 @@ const Lumen = (c: Config) => {
     return _request('/customer/identify', identifyPayload);
   };
 
-  const track = async (event_name: string, input: Track = {}) => {
+  const track = async (identifier: string, event_name: string, input: Track = {}) => {
     if (!event_name) {
       throw Error('key [event_name] is required');
     }
@@ -57,11 +57,6 @@ const Lumen = (c: Config) => {
     const ip_address = await getIpAddress();
 
     validate(trackPropertySchema, input);
-    const identifier = input.identifier || _identifier;
-
-    if (!identifier) {
-      throw Error('identifier is required');
-    }
 
     const trackPayload = {
       ...input,
