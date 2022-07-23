@@ -35,6 +35,10 @@ const Lumen = (c: Config) => {
       throw Error('key [identifier] is required');
     }
 
+    if (!data.email && !data.phone_number) {
+      throw Error('[email] or [phone_number] is required');
+    }
+
     validate(identifySchema, data);
 
     const identifyPayload = {

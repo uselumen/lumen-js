@@ -9,7 +9,13 @@ export const configSchema: InputSchema = {
 export const identifySchema: InputSchema = {
   email: {
     type: 'string',
+    optional: true,
   },
+  phone_number: {
+    type: 'string',
+    optional: true,
+  },
+
   first_name: {
     type: 'string',
     optional: true,
@@ -20,6 +26,7 @@ export const identifySchema: InputSchema = {
   },
   attributes: {
     type: 'object',
+    optional: true,
   },
 };
 

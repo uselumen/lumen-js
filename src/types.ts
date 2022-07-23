@@ -5,7 +5,7 @@ export interface Config {
 export interface IdentifyPayload {
   first_name?: string;
   last_name?: string;
-  email: string;
+  email?: string;
   phone_number?: string;
   attributes?: object;
   device_id?: string;
