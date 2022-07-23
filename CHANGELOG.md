@@ -1,3 +1,8 @@
+## [1.3.3] - 2022-07-23
+
+- Removed the IP address lookup. This is now being handled on the backend.
+- Made `debug` property optional
+
 ## [1.3.2] - 2022-07-23
 
 - Updated example
