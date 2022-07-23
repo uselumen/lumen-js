@@ -10,6 +10,7 @@ const run = async () => {
     email: 'johndoe@gmail.com',
     first_name: 'john',
     last_name: 'doe',
+    device_id: '',
     attributes: {
       hasCompletedKyc: true,
     },
@@ -17,9 +18,7 @@ const run = async () => {
 
   await lumenClient.track('user_identifier', "Clicked 'Add Product To Cart'", {
     platform: 'web',
-    properties: {
-      sku: '102930',
-    },
+    sku: '102930',
   });
 };
 

@@ -1,3 +1,7 @@
+## [1.3.5] - 2022-07-23
+
+- Removed `trackPropertySchema`. `track` can now accept any key-value object of `properties`
+
 ## [1.3.4] - 2022-07-23
 
 - Handle network erros appropriately

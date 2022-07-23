@@ -1,9 +1,9 @@
 import fetch from 'cross-fetch';
 import { BASE_URL } from './lib/constants';
-import { configSchema, identifySchema, trackPropertySchema } from './lib/schema';
+import { configSchema, identifySchema } from './lib/schema';
 import validate from './lib/validate';
 
-import { Config, IdentifyPayload, RequestMethod, Track } from './types';
+import { Config, IdentifyPayload, KeyValueObject, RequestMethod } from './types';
 
 const Lumen = (c: Config) => {
   validate(configSchema, c);
@@ -57,15 +57,13 @@ const Lumen = (c: Config) => {
     return _request('/customer/identify', identifyPayload);
   };
 
-  const track = async (identifier: string, event_name: string, input: Track = {}) => {
+  const track = async (identifier: string, event_name: string, properties: KeyValueObject = {}) => {
     if (!event_name) {
       throw Error('key [event_name] is required');
     }
 
-    validate(trackPropertySchema, input);
-
     const trackPayload = {
-      ...input,
+      properties,
       event_name,
       identifier,
       source: 'js-sdk',

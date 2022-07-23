@@ -13,8 +13,11 @@ export interface IdentifyPayload {
 }
 
 export interface Track {
-  platform?: 'ios' | 'web' | 'android';
   properties?: object;
 }
 
 export type RequestMethod = 'POST' | 'GET' | 'DELETE';
+
+export interface KeyValueObject {
+  [key: string]: any;
+}

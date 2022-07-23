@@ -24,22 +24,12 @@ export const identifySchema: InputSchema = {
     type: 'string',
     optional: true,
   },
-  attributes: {
-    type: 'object',
-    optional: true,
-  },
-};
-
-export const trackPropertySchema: InputSchema = {
-  platform: {
-    type: 'string',
-    optional: true,
-  },
   device_id: {
     type: 'string',
     optional: true,
   },
-  properties: {
+
+  attributes: {
     type: 'object',
     optional: true,
   },
