@@ -1,4 +1,4 @@
-import Lumen from '../src/index';
+import Lumen from '../dist/index.js';
 
 const lumenClient = Lumen({
   publicKey: '<<- your-api-key ->>',

@@ -1,3 +1,7 @@
+## [1.3.0] - 2022-07-23
+
+- Removed webpack bundler
+
 ## [1.2.2] - 2022-07-10
 
 - Updated SDK example

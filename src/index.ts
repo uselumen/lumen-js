@@ -10,8 +10,6 @@ const Lumen = (c: Config) => {
   validate(configSchema, c);
   const _config: Config = c;
 
-  let _identifier = '';
-
   const _request = async (path: string, payload: any, method: RequestMethod = 'POST') => {
     const url = `${BASE_URL}${path}`;
     const response = await fetch(url, {
@@ -38,8 +36,6 @@ const Lumen = (c: Config) => {
     }
 
     validate(identifySchema, data);
-
-    _identifier = identifier;
 
     const identifyPayload = {
       identifier,

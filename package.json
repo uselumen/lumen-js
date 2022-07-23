@@ -2,7 +2,7 @@
   "name": "lumen-js",
   "version": "1.2.2",
   "description": "Personalized and targeted customer marketing",
-  "main": "dist/index.min.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/uselumen/lumen-js",
   "author": "oluwakeye",
@@ -17,7 +17,7 @@
     "lumen.js"
   ],
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "tsc",
     "clean": "tsc --build --clean",
     "example": "ts-node examples/index.ts",
     "format": "prettier --write \"src/**/*.ts\"",
@@ -26,14 +26,13 @@
     "prepublishOnly": "yarn lint"
   },
   "devDependencies": {
+    "@types/node": "^18.0.6",
     "prettier": "^2.6.2",
     "ts-loader": "^9.2.8",
     "ts-node": "^10.7.0",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^4.6.2",
-    "webpack": "^5.71.0",
-    "webpack-cli": "^4.9.2"
+    "typescript": "^4.6.2"
   },
   "dependencies": {
     "cross-fetch": "^3.1.5"

@@ -11,5 +11,4 @@
     "declaration": true
   },
   "exclude": ["examples", "dist"]
-  //   "include": ["src/**/*"]
 }
