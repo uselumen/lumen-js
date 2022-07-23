@@ -1,5 +1,6 @@
 export interface Config {
   publicKey: string;
+  debug: boolean;
 }
 
 export interface IdentifyPayload {

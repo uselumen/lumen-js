@@ -20,14 +20,23 @@ const Lumen = (c: Config) => {
         api_key: `${_config.publicKey}`,
       },
     });
-    const json = await response.json();
 
-    if (!response.ok) {
-      const error = json?.message || 'API connection error';
-      throw Error(error);
+    try {
+      const json = await response.json();
+
+      if (!response.ok) {
+        const error = json?.message || 'API connection error';
+        throw Error(error);
+      }
+
+      return json?.data;
+    } catch (e: unknown) {
+      if (_config.debug) {
+        // tslint:disable-next-line:no-console
+        console.log(`🟥 ${e}`);
+      }
+      return undefined;
     }
-
-    return json?.data || {};
   };
 
   const identify = (identifier: string, data: IdentifyPayload) => {

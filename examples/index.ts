@@ -2,6 +2,7 @@ import Lumen from '../dist/index.js';
 
 const lumenClient = Lumen({
   publicKey: '<<- your-api-key ->>',
+  debug: true,
 });
 
 const run = async () => {

@@ -1,3 +1,8 @@
+## [1.3.2] - 2022-07-23
+
+- Updated example
+- Added `debug` property to config - Setting `debug` to `true` would output errors to the console.
+
 ## [1.3.1] - 2022-07-23
 
 - Made `email` and `attributes` properties optional when identifying a user.
