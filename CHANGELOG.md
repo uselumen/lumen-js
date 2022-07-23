@@ -1,3 +1,7 @@
+## [1.3.4] - 2022-07-23
+
+- Handle network erros appropriately
+
 ## [1.3.3] - 2022-07-23
 
 - Removed the IP address lookup. This is now being handled on the backend.

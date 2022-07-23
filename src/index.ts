@@ -10,17 +10,17 @@ const Lumen = (c: Config) => {
   const _config: Config = c;
 
   const _request = async (path: string, payload: any, method: RequestMethod = 'POST') => {
-    const url = `${BASE_URL}${path}`;
-    const response = await fetch(url, {
-      method,
-      body: JSON.stringify(payload),
-      headers: {
-        'Content-Type': 'application/json',
-        api_key: `${_config.publicKey}`,
-      },
-    });
-
     try {
+      const url = `${BASE_URL}${path}`;
+      const response = await fetch(url, {
+        method,
+        body: JSON.stringify(payload),
+        headers: {
+          'Content-Type': 'application/json',
+          api_key: `${_config.publicKey}`,
+        },
+      });
+
       const json = await response.json();
 
       if (!response.ok) {
