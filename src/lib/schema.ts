@@ -34,3 +34,13 @@ export const identifySchema: InputSchema = {
     optional: true,
   },
 };
+
+export const bannerSchema: InputSchema = {
+  formattedCSS: {
+    type: 'string',
+    optional: true,
+  },
+  htmlContent: {
+    type: 'string',
+  },
+};
