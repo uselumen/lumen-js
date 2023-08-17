@@ -1,9 +1,10 @@
 import fetch from 'cross-fetch';
 import { BASE_URL } from './lib/constants';
-import { configSchema, identifySchema } from './lib/schema';
+import {bannerSchema, configSchema, identifySchema} from './lib/schema';
 import validate from './lib/validate';
 
 import { Config, IdentifyPayload, KeyValueObject, RequestMethod } from './types';
+import {createHtmlElement} from "./lib/utils";
 
 const Lumen = (c: Config) => {
   validate(configSchema, c);
@@ -72,7 +73,18 @@ const Lumen = (c: Config) => {
     return _request('/event/track', trackPayload);
   };
 
-  return { identify, track };
+  const initializeBanner = async () => {
+    const bannerConfig = await _request('banner', undefined, "GET");
+
+    validate(bannerSchema, bannerConfig)
+
+    const body = document.body;
+    const bannerElement = createHtmlElement(bannerConfig.htmlContent);
+    body.prepend(bannerElement);
+  };
+
+
+  return { identify, track, initializeBanner};
 };
 
 export default Lumen;
